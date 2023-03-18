@@ -24,18 +24,15 @@ int main(void)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
-					if (i == 7 && j == 8 && k == 9)
-					{
-						putchar(k + '0');
-						putchar('\n');
-					}
-					else
-				{
 					putchar(k + '0');
+					if (i == 7)
+					{
+						putchar('\n');
+						return (0);
+					}
 					putchar(',');
 					putchar(' ');
-							}
-							}
+				}
 				k++;
 			}
 			j++;
