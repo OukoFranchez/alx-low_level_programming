@@ -2,11 +2,10 @@
 /**
  * main - Entry Point
  *
- * program printing all possible diff combintns of 3 digits
+ * program printing all possible cmbntns of 3 dgts
  *
- * Return 0: Always 0 (Success)
+ * Return: Always 0 (Success)
  */
-
 int main(void)
 {
 	int i = 0;
@@ -26,7 +25,16 @@ int main(void)
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(k + '0');
-				}
+					if (i == 7 && j == 8 && k == 9)
+					{
+						putchar('\n');
+					}
+					else
+				{
+					putchar(',');
+					putchar(' ');
+							}
+							}
 				k++;
 			}
 			j++;
