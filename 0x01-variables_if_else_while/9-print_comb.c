@@ -12,6 +12,7 @@ int main(void)
 
 	while (digit_code <= 57) /* ASCII code for '9'*/
 	{
+		putchar(digit_code);
 		if (digit_code != 57)
 		{
 			putchar(',');
