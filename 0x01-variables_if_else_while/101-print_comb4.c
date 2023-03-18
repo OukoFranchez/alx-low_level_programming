@@ -24,13 +24,14 @@ int main(void)
 				{
 					putchar(i + '0');
 					putchar(j + '0');
-					putchar(k + '0');
 					if (i == 7 && j == 8 && k == 9)
 					{
+						putchar(k + '0');
 						putchar('\n');
 					}
 					else
 				{
+					putchar(k + '0');
 					putchar(',');
 					putchar(' ');
 							}
@@ -44,6 +45,5 @@ int main(void)
 		j = i + 1;
 		k = j + 1;
 	}
-	putchar('\n');
 	return (0);
 }
