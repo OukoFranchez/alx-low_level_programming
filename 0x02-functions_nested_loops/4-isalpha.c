@@ -7,7 +7,7 @@
  * Return: 1 if c is a letter and zero if otherwise
  */
 
-int_isalpha(int c)
+int _isalpha(int c)
 {
 	return ((c >= 65 && c <= 90) || (c >= 97 && c <= 122));
 }
