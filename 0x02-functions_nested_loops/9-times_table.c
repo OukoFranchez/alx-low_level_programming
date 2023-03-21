@@ -8,9 +8,9 @@ void times_table(void)
 {
 	int a, b, c;
 
-	for (a = 0; a <= 10; a++) /*loop through rows 0-9*/
+	for (a = 0; a < 10; a++) /*loop through rows 0-9*/
 	{
-		for (b = 0; b <= 10; b++) /*loops through columns 0-9*/
+		for (b = 0; b < 10; b++) /*loops through columns 0-9*/
 		{
 			c = b * a; /*calculate the product of a & b*/
 
