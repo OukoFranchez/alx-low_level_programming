@@ -1,50 +1,35 @@
 #include <stdio.h>
+#include <math.h>
 
 /**
- * main - Entry point
- *
- * Return: Always 0 (success)
+ * main - entry point
+ * Description: fibonacii sequence
+ * Return: 0
  */
 
 int main(void)
 {
-	int count;
-	unsigned long fib1 = 0, fib2 = 1, sum;
-	unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
-	unsigned int half1, half2;
+	int counter = 2;
+	float num1 = 1;
+	float num2 = num1 + 1;
+	float num3 = num1 + num2;
 
-	for (count = 0; count < 92; count++)
-	{
-		sum = fib1 + fib2;
-		printf("%lu, ", sum);
-		fib1 = fib2;
-		fib2 = sum;
-	}
-	fib1_half1 = fib1 / 10000000000;
-	fib2_half1 = fib2 / 10000000000;
-	fib1_half2 = fib1 % 10000000000;
-	fib2_half2 = fib2 % 10000000000;
+	printf("%.0f, ", num1);
+	printf("%.0f, ", num2);
 
-	for (count = 93; count < 99; count++)
+	while (counter < 98)
 	{
-		half1 = fib1_half1 + fib2_half1;
-		half2 = fib1_half2 + fib2_half2;
-		if (fib1_half2 + fib2_half2 > 9999999999)
+		counter++;
+		printf("%.0f", num3);
+		num1 = num2;
+		num2 = num3;
+		num3 = num1 + num2;
+
+		if (counter < 98)
 		{
-			half1 += 1;
-			half2 %= 10000000000;
-		}
-		printf("%lu%lu", half1, half2);
-		if (count != 98)
 			printf(", ");
-
-		fib1_half1 = fib2_half1;
-		fib1_half2 = fib2_half2;
-		fib2_half1 = half1;
-		fib2_half2 = half2;
+		}
 	}
-
 	printf("\n");
-
 	return (0);
 }
