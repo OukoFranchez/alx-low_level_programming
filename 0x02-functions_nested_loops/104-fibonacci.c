@@ -10,9 +10,9 @@
 int main(void)
 {
 	int counter = 2;
-	float num1 = 1;
-	float num2 = num1 + 1;
-	float num3 = num1 + num2;
+	double num1 = 1;
+	double num2 = num1 + 1;
+	double num3 = num1 + num2;
 
 	printf("%.0f, ", num1);
 	printf("%.0f, ", num2);
