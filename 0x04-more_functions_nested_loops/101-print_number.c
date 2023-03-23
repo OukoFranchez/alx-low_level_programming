@@ -7,15 +7,17 @@
 
 void print_number(int n)
 {
+	unsigned int i = n;
+
 	if (n < 0) /* handling negative no.s*/
 	{
-		_putchar('-');
-		n = -n;
+		_putchar(45);
+		i = -i;
 	}
-	if (n / 10 > 0) /* recursively printing digits*/
+	if (i / 10)
 	{
-		print_number(n / 10);
+		print_number(i / 10);
 	}
-	_putchar((n % 10) + '0'); /* print the last digit*/
+	_putchar((i % 10) + '0'); /* print the last digit*/
 }
 
