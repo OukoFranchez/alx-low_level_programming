@@ -3,48 +3,22 @@
 #include <time.h>
 
 /**
- * main - entry point
- *
- * Return: Always 0 (Success)
+ * main - generates random passwords for 101-crackme object code
+ * Description: This is not my original work
+ * Return: zero
  */
-#define PASSWORD_LENGTH 12
-#define BUFFER_SIZE 100
-
 int main(void)
 {
-	char buffer[BUFFER_SIZE];
-	char password[PASSWORD_LENGTH + 1];
-	int i, j, num_chars;
+	int sum;
+	char c;
 
 	srand(time(NULL));
-
-	while (1)
+	while (sum <= 2645)
 	{
-		num_chars = rand() % BUFFER_SIZE;
-
-		for (i = 0; i < num_chars; i++)
-		{
-			buffer[i] = rand() % 94 + 33;
-		}
-		j = 0;
-		for (i = 0; i < num_chars && j < PASSWORD_LENGTH; i++)
-		{
-			if (buffer[i] >= '0' && buffer[i] <= '9')
-			{
-				password[j++] = buffer[i];
-			}
-			else if (buffer[i] >= 'A' && buffer[i] <= 'Z')
-			{
-				password[j++] = buffer[i];
-			}
-		}
-		password[j] = '\0';
-		printf("%s\n", password);
-		if (j == PASSWORD_LENGTH)
-		{
-			break;
-		}
+		c = rand() % 128;
+		sum += c;
+		putchar(c);
 	}
-
+	putchar(2772 - sum);
 	return (0);
 }
