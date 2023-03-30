@@ -21,7 +21,7 @@ char *cap_string(char *s)
 		/* If first character is lowercase, capitalize it*/
 		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
 			s[i] -= 32;
-		
+
 		/* Check for separator characters*/
 		for (j = 0; j < 13; j++)
 		{
