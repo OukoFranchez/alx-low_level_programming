@@ -5,7 +5,7 @@
  * @a: a pointer pointing towards 2D array
  */
 void print_chessboard(char (*a)[8])
-{	
+{
 	/* r will rep rows and c will rep columns */
 	int r, c;
 
