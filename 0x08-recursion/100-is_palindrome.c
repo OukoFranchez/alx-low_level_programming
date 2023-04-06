@@ -40,30 +40,30 @@ int _strlen_recursion(char *s)
 	if (*s == '\0')
 		return (0);
 
-	/* return 1 and add the length of the
-	 * remaining string to count the length of the string recursively */
+	/* return 1 and add the length of the */
+	/* remaining string to count the length of the string recursively */
 
 	return (1 + _strlen_recursion(s + 1));
 }
 
 /**
- * check_pal - checks the characters recursively for palindrome
+ * check_palindrome - checks the characters recursively for palindrome
  * @s: the string to check
  * @i: the iterator
- * @len: length of the string
+ * @len:string string length
  *
  * Return: 1 if palindrome, 0 if its not
  */
 int check_palindrome(char *s, int i, int len)
 {
-	/* If the first character and last character
-	 * are not equal, the string is not palindrome */
+	/* If the first character and last character */
+	 /* are not equal, the string is not palindrome */
 
 	if (*(s + i) != *(s + len - 1))
 		return (0);
 
-	/* If i is greater than or equal to length,
-	 * this means that all characters have been compared */
+	/* If i is greater than or equal to length,*/
+	/* this means that all characters have been compared */
 
 	if (i >= len)
 		return (1);
