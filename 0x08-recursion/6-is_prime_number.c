@@ -1,44 +1,47 @@
 #include "main.h"
-#include <math.h>
 
 /**
- * primeHelper - determines if a number is a prime number
- * @n: the number being checked
- * @i: the divisor to check if n is divisible by
- * Return: 1 if it prime otherwise 0
+ * isPrime - detects if an input number is a prime number
+ * @n: input number
+ * @i: iterator
+ * Return: 1 if n is a prime number and 0 if n is not a prime number
  */
-int primeHelper(int n, int i)
+int isPrime(unsigned int n, unsigned int i)
 {
-	/* if n < 2 its not prime */
-	if (n < 2)
-	{
-		return (0);
-	}
-
-	/* if i is greater than n's square root, n is prime */
-	if (i > (int) sqrt(n))
-	{
-		return (1);
-	}
-
-	/* if n is divisible by i it isn't prime */
+	/* If n is divisible by c, then it's not a prime number */
 	if (n % i == 0)
 	{
-		return (0);
+		/* If n is equal to c, then it is a prime number */
+		if (n == i)
+			return (1);
+
+		else
+			return (0);
 	}
+	/* Otherwise, check if n is prime by incrementing c */
+	/* and calling is_prime recursively */
 
-	/* check if n is divisible by next number */
-
-	return (primeHelper(n, i + 1));
+	return (0 + isPrime(n, i + 1));
 }
 
 /**
- * is_prime_number - determines whether a number is prime
- * @n: the number being checked
- * Return: 1 if prime otherwise 0
+ * is_prime_number - detects if the input number is a prime number
+ * @n: input number
+ * Return: 1 if n is a prime number. 0 if n is not a prime number
  */
 int is_prime_number(int n)
 {
-	/* begin with the divisor of 2 */
-	return (primeHelper(n, 2));
+	/* Check for special cases first: 0, negative numbers, and 1 are not prime */
+	if (n == 0)
+		return (0);
+
+	if (n < 0)
+		return (0);
+
+	if (n == 1)
+		return (0);
+
+	/* If none of the special cases apply,- */
+	/* call is_prime to determine if n is prime */
+	return (isPrime(n, 2));
 }
