@@ -1,23 +1,28 @@
 #include "main.h"
-#include <stddef.h>
+#include <stdio.h>
 
 /**
- * _strchr - function allocating a character in a string
- * @s: the string where the character is allocated
- * @c: the character being checked for
- * Return: a pointer to the 1st occurence of the character-
- * c in the string s or null if otherwise
+ * *_strchr - locates a character in a string
+ * @s: string to search
+ * @c: char to find
+ *
+ * Return: a pointer to the first occurrence of the character
+ * c in the string s, or NULL is the character isn't found
  */
 char *_strchr(char *s, char c)
 {
-	int y;
+	int b;
 
-	for (y = 0; s[y] != '\0'; y++)
+	while (1)
 	{
-		if (s[y] == c)
+		b = *s++;
+		if (b == c)
 		{
-			return (&s[y]);
+			return (s - 1);
+		}
+		if (b == 0)
+		{
+			return (NULL);
 		}
 	}
-	return (NULL);
 }
