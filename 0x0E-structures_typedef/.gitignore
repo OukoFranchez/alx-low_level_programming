@@ -6,3 +6,4 @@
 ./f
 ./output
 check.c
+*.swp
