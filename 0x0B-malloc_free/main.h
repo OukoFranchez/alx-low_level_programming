@@ -10,6 +10,9 @@ char **strtow(char *str);
 char *argstostr(int ac, char **av);
 char *argstostr(int ac, char **av);
 
+int _strlen(char *s);
+char *_strcpy(char *dest, char *src);
+char *_strcat(char *dest, char *src);
 
 
 
