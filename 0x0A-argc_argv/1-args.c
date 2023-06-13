@@ -6,8 +6,9 @@
  * @argv: argument count
  * Return: always 0 (success)
  */
-int main(int argc, char __attribute__ ((unused)) **argv)
+int main(int argc, char **argv)
 {
+	(void)argv;
 	printf("%d\n", argc - 1);
 
 	return (0);
