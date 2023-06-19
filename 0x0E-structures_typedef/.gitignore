@@ -1,10 +1,10 @@
 *main.c
-./a
-./b
-./c
-./e
-./f
-./output
+a
+b
+c
+e
+f
+output
 check.c
 *.swp
 bb
