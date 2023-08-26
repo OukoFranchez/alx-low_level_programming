@@ -1,2 +1,3 @@
 #!/bin/bash
-export LD_PRELOAD=./gigawin.so
+export LD_PRELOAD=/$PWD/libtest.so
+
