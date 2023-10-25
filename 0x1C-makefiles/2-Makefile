@@ -1,17 +1,19 @@
 CC = gcc
 SRC = main.c school.c
-
-OBJ = main.o school.o
+#object files derived from .c files
+OBJ = $(SRC:.c=.o)
 NAME = school
 
 all: $(NAME)
 
-school: $(OBJ)
-	$(CC) $(OBJ) -o school
+# building executables from object files
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
+# compiling each source file into an object file
 %.o: %.c
 	$(CC) -c $< -o $@
 
+# cleaning up the generated files
 clean:
-	rm main.o school.o
-
+	rm -rf $(OBJ) $(NAME)
