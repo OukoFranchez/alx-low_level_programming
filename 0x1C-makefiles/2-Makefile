@@ -14,3 +14,4 @@ school: $(OBJ)
 
 clean:
 	rm main.o school.o
+
