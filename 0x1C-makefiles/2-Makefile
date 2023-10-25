@@ -11,3 +11,6 @@ school: $(OBJ)
 
 %.o: %.c
 	$(CC) -c $< -o $@
+
+clean:
+	rm main.o school.o
