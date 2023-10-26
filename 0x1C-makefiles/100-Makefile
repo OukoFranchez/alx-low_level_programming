@@ -9,6 +9,9 @@ CFLAGS = -Wall -Werror -Wextra -pedantic
 all: m.h $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
+# Do not compile if m.h is missing
+main.c school.c: m.h
+
 clean:
 	$(RM) *~ $(NAME)
 
