@@ -1,58 +1,39 @@
-#include <stdio.h>
-#include <math.h>
 #include "search_algos.h"
 
-
 /**
- * jump_search - search an array of integers using Jump Search algorithm
+ * jump_search - Searches for a value in a sorted array
+ *               of integers using jump search.
+ * @array: A pointer to the first element of the array to search.
+ * @size: The number of elements in the array.
+ * @value: The value to search for.
  *
- * @array: pointer to the first element of the array to search
- * @size: size of the array to search
- * @value: value to search for
+ * Return: If the value is not present or the array is NULL, -1.
+ *         Otherwise, the first index where the value is located.
  *
- * Return: the first index the value is found at, otherwise -1 if array
- * is null or value can't be found
+ * Description: Prints a value every time it is compared in the array.
+ *              Uses the square root of the array size as the jump step.
  */
 int jump_search(int *array, size_t size, int value)
 {
-	size_t i, j, block_size;
+	size_t i, jump, step;
 
-	if (!array)
+	if (array == NULL || size == 0)
 		return (-1);
-	block_size = (size_t)sqrt((double)size);
-	for (i = 0; i <= block_size; ++i)
+
+	step = sqrt(size);
+	for (i = jump = 0; jump < size && array[jump] < value;)
 	{
-		if (array[i * block_size] >= value)
-		{
-			if (i == 0)
-			{
-				printf("Value found between indexes [0] and [%ld]\n",
-					(i + 1) * block_size);
-				printf("Value checked array[0] = [%d]\n", array[0]);
-				return (0);
-			}
-			printf("Value found between indexes [%ld] and [%ld]\n",
-				(i - 1) * block_size, i * block_size);
-			for (j = (i - 1) * block_size; j <= (i * block_size); j++)
-			{
-				printf("Value checked array[%ld] = [%d]\n", j,
-					array[j]);
-				if (array[j] == value)
-					return (j);
-			}
-			return (-1);
-		}
-		printf("Value checked array[%ld] = [%d]\n", i * block_size,
-			array[i * block_size]);
+		printf("Value checked array[%ld] = [%d]\n", jump, array[jump]);
+		i = jump;
+		jump += step;
 	}
-	printf("Value found between indexes [%ld] and [%ld]\n",
-		(i - 1) * block_size, i * block_size);
-	for (j = (i - 1) * block_size; j < size; ++j)
-	{
-		printf("Value checked array[%ld] = [%d]\n", j,
-			array[j]);
-		if (array[j] == value)
-			return (j);
-	}
-	return (-1);
+
+	printf("Value found between indexes [%ld] and [%ld]\n", i, jump);
+
+	jump = jump < size - 1 ? jump : size - 1;
+	for (; i < jump && array[i] < value; i++)
+		printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+	printf("Value checked array[%ld] = [%d]\n", i, array[i]);
+
+	return (array[i] == value ? (int)i : -1);
 }
